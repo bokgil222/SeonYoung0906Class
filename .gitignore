@@ -94,3 +94,7 @@ local.properties
 hs_err_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java
+java project/FirstJava/.classpath
+유영진_orientation_.pdf
+FIRSTJAVA_OOP_project.pdf
+java project/FirstJava/.project
