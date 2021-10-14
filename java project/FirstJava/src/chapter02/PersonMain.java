@@ -4,20 +4,20 @@ public class PersonMain {
 
 	public static void main(String[] args) {
 		
-		// Person ≈¨∑°Ω∫¿« ¿ŒΩ∫≈œΩ∫ ª˝º∫
+		// Person ÌÅ¥ÎûòÏä§Ïùò Ïù∏Ïä§ÌÑ¥Ïä§ ÏÉùÏÑ±
 		Person p = new Person();
 		
-		// p.memberName = "º≠º±øµ";
-		p.setMemberName("º’»ÔπŒ");
+		//p.memberName = "ÏÑúÏÑ†ÏòÅ";
+		p.setMemberName("ÏÜêÌù•ÎØº");
 		p.setPhoneNumber("010-7777-7777");
 		p.setJuminNumber(9912121111111L);
-		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-		System.out.println("¿Ã∏ß:" + p.getMemberName());
-		System.out.println("¿¸»≠π¯»£:" + p.getPhoneNumber());
-		System.out.println("¡÷πŒπ¯»£:" + p.getJuminNumber());
+		
+		System.out.println("Ïù¥Î¶Ñ:" + p.getMemberName());
+		System.out.println("Ï†ÑÌôîÎ≤àÌò∏:"+ p.getPhoneNumber());
+		System.out.println("Ï£ºÎØºÎ≤àÌò∏:"+ p.getJuminNumber());
 		
 		System.out.println("------------------------------");
 		p.printData();
+		
 	}
-
 }
