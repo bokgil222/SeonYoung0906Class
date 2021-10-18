@@ -2,6 +2,7 @@ package chapter06;
 
 public class Lotto {
 	public static void main(String[] args) {
+		
 		// 1~45까지의 숫자를 저장할 수 있는 배열을 생성
 		int[] ball = new int[45];
 
