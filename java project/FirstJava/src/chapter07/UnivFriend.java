@@ -4,7 +4,11 @@ public class UnivFriend extends Friend {
 
 	String major; // 전공
 
-	public UnivFriend(String name, String phoneNumber, String address, String major) {
+	public UnivFriend(
+			String name, 
+			String phoneNumber, 
+			String address, 
+			String major) {
 		super(name, phoneNumber, address);
 		this.major = major;
 	}

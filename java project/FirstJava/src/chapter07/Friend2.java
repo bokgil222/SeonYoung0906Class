@@ -1,7 +1,6 @@
 package chapter07;
 
-// 추상 클래스로 만들기 : 추상 메소드 생성
-public abstract class Friend {
+public class Friend2 {
 	
 	// 개인 정보 관리 프로그램
 	// 정보를 저장하는 변수
@@ -10,7 +9,7 @@ public abstract class Friend {
 	String address;
 	
 	// 저장 데이터의 초기화: 생성자
-	public Friend(String name, String phoneNumber, String address) {
+	public Friend2(String name, String phoneNumber, String address) {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
@@ -25,7 +24,5 @@ public abstract class Friend {
 	}
 	
 	// 오버라이딩 목적으로 하는 메소드 
-	// public void showBasicInfo() {}
-	// 추상 메소드: 처리 블록이 없다!
-	public abstract void showBasicInfo();
+	public void showBasicInfo() {}
 }
