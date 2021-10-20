@@ -5,7 +5,7 @@ package exam;
 // String str = "ABCDEFGHIJKLMN";
 // 그리고 이 문자열을 역순을 다시 출력하는 프로그램을 작성
 
-public class JavaAPI {
+public class Ex06 {
 	public static void main(String[] args) {
 		String str = "ABCDEFGHIJKLMN";
 		
