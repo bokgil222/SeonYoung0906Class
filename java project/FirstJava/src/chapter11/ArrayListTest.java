@@ -10,7 +10,7 @@ public class ArrayListTest {
 
 		ArrayList<Integer> list = null;
 
-		// list = new ArrayList<>(Integer);
+		// list = new ArrayList<Integer>();
 		list = new ArrayList<>();
 
 		List<Integer> list2 = new ArrayList<Integer>();
@@ -31,14 +31,14 @@ public class ArrayListTest {
 			System.out.println(list.get(i));
 		}
 		
-		System.out.println("---------------------------");
+		System.out.println("------------------------");
 		
 		// for each 
 		for(Integer i : list) {
 			System.out.println(i);
 		}
 		
-		System.out.println("---------------------------");
+		System.out.println("------------------------");
 		
 		// 정렬자를 이용한 전체 출력
 		Iterator<Integer> itr = list.iterator();
@@ -54,16 +54,10 @@ public class ArrayListTest {
 		
 		System.out.println("2번지 요소 삭제");
 		System.out.println();
+		
+		// for each
+		for(Integer i : list) {
+			System.out.println(i);
+		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
