@@ -1,8 +1,11 @@
-package project;
+package project01;
+// 프로젝트 1
+// 스마트폰에 이름, 전화번호, 이메일 등과 같은 연락처 정보를 저장하는 애플리케이션 화면
 // 저장 정보: 이름, 전화번호, 이메일, 주소, 생일, 그룹
 // 기능: 위 데이터를 출력하는 기능
 
 import java.util.Scanner;
+
 public class Contact {
 
 	// 변수들은 직접 참조를 막아 캡슐화 처리
