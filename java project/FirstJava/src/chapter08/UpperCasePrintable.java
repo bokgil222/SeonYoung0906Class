@@ -1,6 +1,5 @@
 package chapter08;
 
-public class UpperCasePrintable {
-	
+public interface UpperCasePrintable {
 	// 마킹의 효과
 }
