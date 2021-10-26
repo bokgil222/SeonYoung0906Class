@@ -1,8 +1,8 @@
 package chapter06;
 
 public class ScoreMain {
-	
-public static void main(String[] args) {
+
+	public static void main(String[] args) {
 		
 		// 배열을 가지고 컨트롤하는 클래스 객체
 		ScoreManager manager = new ScoreManager();
@@ -19,5 +19,6 @@ public static void main(String[] args) {
 		
 		// 전체 데이터 출력
 		manager.showAllData();
+
 	}
 }
