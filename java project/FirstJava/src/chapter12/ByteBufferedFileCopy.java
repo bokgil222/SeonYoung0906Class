@@ -23,7 +23,7 @@ public class ByteBufferedFileCopy {
 			// 보조 스트림(필터 스트림): 필터스트림을 사용하기 위해서는 기본 스트림이 필요
 			BufferedInputStream bin = new BufferedInputStream(in, 1024*2);
 			BufferedOutputStream bout = new BufferedOutputStream(out, 1024*2);
-
+			
 			int copyByte = 0; // 복사한 바이트 사이즈 계산
 			int bData = -1;  // 스트림으로부터 읽어온 byte 단위의 데이터
 			
