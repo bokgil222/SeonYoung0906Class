@@ -21,5 +21,8 @@ public class TreeSetTest2 {
 		while(itr.hasNext()) {
 			System.out.println(itr.next());
 		}
+		
+
 	}
+
 }
