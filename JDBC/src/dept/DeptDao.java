@@ -8,28 +8,30 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-// DAta Access Object: sql 처리만 하는 클래스
+// Data Access Object : Sql 처리만 하는 클래스
 public class DeptDao {
 
-	// 변수가 없는 클래스, 기능만 있는 클래스
-	// 인스턴스를 하나만 만들어 써도 된다!
-	// 인스턴스를 여러 개 만들어 쓰게 하지 말자!
-
+	// 변수가 없는 클래스  , 기능만 있는 클래스
+	// 인스턴스를 하나만 만들어써도 된다!!!
+	// 인스턴스를 여러개 만들어 쓰게 하지 말자!!!!
 	// 싱글톤 패턴
-	// 인스턴스 하나만 만들어 사용하도록 하는 패턴
+	// 인스턴스 하나만 만들어 사용하도록하는 패턴
 	// 외부에서 인스턴스를 생성하지 못하도록 처리! -> 생성자의 접근제어자를 private
-	private DeptDao() {
-	}
-
-	// 클래스 내부에서 인스턴스를 생성!, 이 인스턴스를 직접 접근이 안되도록!
+	private DeptDao(){}
+	
+	// 클래스 내부에서 인스턴스를 생성!!! , 이 이스턴스를 직접 접근 안되도록!
 	private static DeptDao dao = new DeptDao();
-
-	// 내부에서 만들어진 인스턴스를 특정 메소드를 이용해서 받을 수 있도록 해주자!
+	
+	// 내부에서 만들어진 인스턴스를 특정 메소드를 이용해서 받을 수 있도록 해주자!!!
 	static public DeptDao getInstance() {
 		return dao;
 	}
-
-	// 전체 리스트 구하는 메소드: select -> connection을 전달받고, List<Dept>
+	
+	
+	
+	
+	
+	// 전체 리스트 구하는 메소드 : select -> Connection을 전달 받고, List<Dept>
 	public List<Dept> selectAllList(Connection conn) {
 
 		Statement stmt = null;
@@ -45,27 +47,30 @@ public class DeptDao {
 			while (rs.next()) {
 				result.add(new Dept(rs.getInt(1), rs.getString(2), rs.getString(3)));
 			}
+
 		} catch (SQLException e) {
 			System.out.println("예외");
 			e.printStackTrace();
 		} finally {
 			JdbcUtil.close(rs);
-			JdbcUtil.close(stmt);
+			JdbcUtil.close(pstmt);
 		}
 
 		return result;
 	}
 
-	// 부서 정보를 검색하는 메소드: select -> connection을 전달받고, 부서번호, Dept
+	
+	
+	// 부서 정보를 검색 메소드 : select -> Connection을 전달 받고, 부서 번호, Dept
 	public Dept selectByDeptno(Connection conn, int deptno) {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		// 검색 결과: 부서 정보
+		// 검색 결과 : 부서정보
 		Dept dept = null;
 
-		// Sql: Select
+		// Sql : Select
 		String sql = "select * from dept where deptno=?";
 		// 결과 -> 1 또는 0행
 
@@ -81,6 +86,7 @@ public class DeptDao {
 			}
 
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			JdbcUtil.close(rs);
@@ -88,17 +94,18 @@ public class DeptDao {
 		}
 
 		return dept;
-
 	}
 
-	// 부서 정보를 입력하는 메소드: insert -> Connection을 전달 받고, Dept 객체를 전달받아서 수정
+	
+	
+	// 부서 정보를 입력 메소드 : insert -> Connection을 전달 받고, Dept 객체를 전달 받아서 입력
 	public int insertDept(Connection conn, Dept dept) {
 
 		PreparedStatement pstmt = null;
 
 		int resultCnt = 0;
 
-		// SqlL insert
+		// Sql : insert
 		String sql = "insert into dept values (?, ?, ?)";
 
 		try {
@@ -111,23 +118,27 @@ public class DeptDao {
 			resultCnt = pstmt.executeUpdate();
 
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			JdbcUtil.close(pstmt);
 		}
 
 		return resultCnt;
+
 	}
 
-	// 부서 정보를 수정하는 메소드: update -> Connection을 전달 받고, Dept 객체를 전달받아서 수정
+	
+	
+	// 부서 정보를 수정하는 메소드 : update -> Connection을 전달 받고, Dept 객체를 전달 받아서 수정
 	public int editDept(Connection conn, Dept dept) {
 
 		PreparedStatement pstmt = null;
 
 		int resultCnt = 0;
 
-		// Sql: update
-		String sql = "update dept set dname=?, loc=?, where deptno=?";
+		// Sql : update
+		String sql = "update dept set dname=?, loc=? where deptno=?";
 
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -138,8 +149,8 @@ public class DeptDao {
 			resultCnt = pstmt.executeUpdate();
 
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-
 		} finally {
 			JdbcUtil.close(pstmt);
 		}
@@ -147,13 +158,15 @@ public class DeptDao {
 		return resultCnt;
 	}
 
-	// 부서 정보를 삭제하는 메소드: delete -> Connection을 전달 받고, 부서번호를(PK)를 전달받아 삭제
+	
+	
+	// 부서 정보를 삭제하는 메소드 : delete -> Connection을 전달 받고, 부서번호(PK)를 전달 받아 삭제
 	public int deleteDept(Connection conn, int deptno) {
 
 		PreparedStatement pstmt = null;
 		int resultCnt = 0;
 
-		// Sql: delete
+		// Sql : delete
 		String sql = "delete from dept where deptno=?";
 
 		try {
@@ -163,6 +176,7 @@ public class DeptDao {
 			resultCnt = pstmt.executeUpdate();
 
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			JdbcUtil.close(pstmt);
@@ -170,4 +184,5 @@ public class DeptDao {
 
 		return resultCnt;
 	}
+
 }
