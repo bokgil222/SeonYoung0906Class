@@ -1,10 +1,10 @@
 
 /* 주문정보 */
-DROP TABLE order1 
+DROP TABLE orderinfo
 	CASCADE CONSTRAINTS;
 
 /* 주문정보 */
-CREATE TABLE order1 (
+CREATE TABLE orderinfo (
 	oid NUMBER(6) NOT NULL, /* 주문번호 */
 	oprice INTEGER NOT NULL, /* 주문금액 */
 	odate TIMESTAMP NOT NULL, /* 주문일자 */
@@ -17,4 +17,5 @@ CREATE TABLE order1 (
 
 delete from delivery;    
 select * from delivery;
+COMMIT;
 
