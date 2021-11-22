@@ -1,0 +1,156 @@
+
+
+.wrap{  
+    height: 720px;
+    text-align: center;
+    background-color: #f0f2f5;
+    margin: 0 auto;   
+}
+
+.main { 
+    width: 65%;
+    height: 720px;
+    margin: 0 auto;  
+    overflow: hidden;
+    position: relative;
+}
+
+.abc{
+    width: 50%;
+    margin: 0 auto;
+    float: left;   
+}
+
+.logo{
+    position: absolute;
+    top: 27%;
+    left: 55px;
+    font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+    font-size: 1.7em;
+}
+
+.logo_img{
+    height:100px;
+    margin-left:-26px;
+}
+
+.login {
+    width: 50%;
+    float: right;   
+}
+
+.login_bg {
+    width: 400px;
+    height: 335px;  
+    background-color: white;   
+    border-radius: 2%;
+    box-shadow: 0px 3px 10px rgb(0 0 0 / 20%);
+    position: absolute;
+    top: 20%;
+    right: 85px;   
+}
+
+.login_form{  
+    width: 370px;
+    margin: 10px auto;
+}
+
+input[type=text], input[type=password]{
+    display: block;
+    
+    border: 1px solid grey;
+    width: 97%;
+    height: 48px;
+
+    border-radius: 5px;
+    font-size: large;
+    
+    
+    margin: 10px auto;  
+    padding-left: 10px;
+}
+
+
+input[type=button]{
+    
+
+    width: 97%;
+    height: 48px;
+
+    border-radius: 5px;
+    font-size: larger;
+    font-weight: bold;
+
+    color: white;
+   /*  border-color: rgb(24,119,242); */
+    border: 0px solid white;
+    background-color: rgb(24,119,242);
+   
+    margin: 10px auto;  
+
+}
+.new_account{
+    width: 40%;
+    height: 48px;
+    color: white;
+    border: 0px solid white;
+    background-color: rgb(66,183,42);
+    font-size: larger;
+    font-weight: bold;
+
+    margin: 20px auto;
+  
+
+}
+input:focus{
+  outline:1px solid rgb(231,243,255);
+  border: 1px solid rgb(24,119,242);
+  
+}
+
+#log_in_button:hover{
+    background-color: rgb(22,111,229);
+}
+#new_account:hover{
+    background-color: rgb(54,164,42);
+}
+
+hr{
+    width: 90%;
+}
+
+
+   
+
+.footer{
+    height: 200px;
+    margin: 0, auto;
+   
+} 
+.lang{
+    width: 60%;
+    height: 30%;
+    
+    margin: 0px auto;
+    text-align: left;
+    
+}
+.footer a{
+    
+    font-size: small;
+    font-weight: normal;
+    text-decoration: none;
+    color: grey;
+  
+   
+   
+    
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+.footer hr{
+    width: 100%
+}
+
