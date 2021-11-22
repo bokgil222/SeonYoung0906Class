@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <div id="header1">
+        <h1 class="title"> 제목입니다. </h1>
+        <div id="nav">
+            <h1>네비게이션</h1>
+        </div>
+    </div>
+
+    <!-- 범위 한정 선택: 자손, 후손-->
+    <style>
+        #header1 h1 {
+            background-color: white;
+            color: red;
+        }
+
+        #section h1 {
+            color: blueviolet;
+        }
+
+        #header>h1 {
+            color:blue;
+            font-weight: bold;
+        }
+
+        /* 동위 선택자: +, ~ */
+        #head1+h1 {
+            color: blue;
+        }
+
+        #head1~2 {
+            color:
+        }
+    </style>
+
+    <!-- 반응 선택자 -->
+    <style>
+
+        /* 마우스 커서가 특정 요소 위로 올라갔을 때 반응 */
+        h3:hover {
+            color: rosybrown;
+            background-color: salmon;
+        }
+
+        h3:active {
+            color: blue;
+            background-color: chartreuse;
+        }
+
+    </style>
+
+    <!-- 상태 선택자 -->
+    <style>
+        input:enabled {
+            border: 5px solid #ff0000;
+        }
+
+        input:disabled {
+            background-color: darkgray;
+        }
+
+        input:focus {
+            background-color: darkorange;
+            border:5px solid darkturquoise;
+        }
+
+        #article {
+        width: 300px;
+        height: 300px;
+
+        overflow: hidden;
+    }
+
+    input[type=checkbox]:checked+div {
+        width: 0px;
+    }
+
+    input[type=checkbox]{
+        display: none;
+    }
+
+    li:nth-child(2n) {
+        background-color: gold;
+        color:black;
+    }
+
+    li:nth-child(2n+1) {
+        background-color: aquamarine;
+        color: blue;
+    }
+
+    /* 리스트 태그를 수평 방향으로 나열 */
+    ul {
+        overflow: hidden;
+
+        /* 리스트 스타일 */
+        list-style: square;
+    }
+
+    li {
+        float: left;
+        padding: 10px 30px;
+    }
+
+
+
+
+    li:first-child {
+        background-color:deeppink ;
+        color:forestgreen;
+    }
+
+    li:first-child {
+        background-color:deeppink ;
+        color:forestgreen;
+    }
+
+    #photo {
+        border-radius: 50%;
+        border: 3px solid gray;
+    }
+
+    </style>
+
+
+</head>
+<body>
+
+    <img id="photo" src="1.jfif" alt="">
+    <hr>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+
+    <hr>
+
+    <label for="btn">기사 가리기</label><input type="checkbox">
+    <div id="arrticle">
+        <h1>[지스타 2021]슈퍼캣 게임 '그래니의 저택', 위믹스 플랫폼 합류</h1>
+        <p>슈퍼캣이 서비스하는 '그래니의 저택'이 위믹스 플랫폼에 합류한다.
+
+        18일 위메이드와 슈퍼캣에 따르면 슈퍼캣의 게임을 위믹스 플랫폼에 온보딩하기로 합의하고 업무협약(MOU)을 체결했다.</p>
+    </div>
+    
+    <hr>
+
+    <input> <input disabled>
+
+
+
+
+    <hr>
+
+
+    <h3>반응 선택자</h3>
+    <hr>
+
+    <div>
+        <h1 id="head1">Header1 - 1 </h1>
+        <h1>Header1 - 2 </h1>
+        <h2>Header2 - 1 </h2>
+        <h2>Header2 - 2 </h2>
+        <h2>Header2 - 3 </h2>
+        <h2>Header2 - 4 </h2>
+        <h2>Header2 - 5 </h2>
+    </div>
+
+
+
+    <div id="header1">
+        <h1 class="title"> 제목입니다. </h1>
+        <div id="nav">
+            <h1>네비게이션</h1>
+        </div>
+    </div>
+
+    <div id="section">
+        <h1 class="title"> 제목2입니다.</h1>
+        <p>내용이 표현됩니다.</p>
+    </div>
+
+</body>
+</html>
