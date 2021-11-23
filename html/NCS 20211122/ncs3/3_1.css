@@ -1,0 +1,158 @@
+div{
+    
+    margin: 0 auto;
+    /* overflow: hidden; */
+    /* border: 1px solid black; */
+}
+
+/* .globalwrap{
+    background-color: pink;
+} */
+
+.innerheader{
+    width: 70%;
+    
+    
+   
+   /*  border: 1px solid black; */
+    text-align: center;
+    margin: 0 auto;
+
+    position: relative;
+    
+}
+/* .innerheader #logo{
+   
+    
+} */
+#logo{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 110px;
+    
+    
+    
+    
+}
+#logo h1{
+    
+    height: 100px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size:50px;
+    
+     
+    color: rgb(3,199,90);
+    /* margin: 0 auto; */
+    margin-bottom: 0;
+   
+}
+#selectlang{
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 0;   
+}
+#selectlang select{
+    width: 100px;
+    height: 30px;
+
+}
+
+.container .logInBox{
+    width: 550px;
+    height: 400px;
+    background-color: white;
+    border-radius: 2%;  
+    border: 1px solid grey;
+    
+}
+form{
+    width: 100%;
+}
+#insertbox{
+    width: 90%;
+    margin-top: 50px;
+   /*  border: 2px solid green; */
+}
+
+.logInBox input{
+    width: 100%;
+    height: 50px; 
+    border-radius: 10px;
+    border: 1px solid grey;
+    font-size: large;
+    color: grey;
+    margin-bottom: 1px;       
+}
+.logInBox input[type=text]{
+    border-radius: 10px 10px 0px 0px;
+}
+.logInBox input[type=password]{
+    border-radius: 0px 0px 10px 10px;
+}
+
+.logInBox input[type=submit]{
+    color: white;
+    text-overflow: bold;
+    font-weight: bolder;
+    font-size: x-large;
+    background-color:  rgb(3,199,90);
+    
+    margin-top: 40px; 
+}
+
+.logInBox input:focus{
+   outline: 1px solid rgb(3,199,90);
+   
+}
+
+
+.findInfo{
+    text-align: center;
+    
+    margin: 20px auto;
+    width: 550px;
+    
+   /*  border: 2px solid red; */
+}
+.findInfo a{
+ 
+
+    text-decoration: none;
+    color: grey;    
+}
+
+
+
+.banner {
+    margin: 30px auto;
+    width: 550px;
+    
+}
+.banner img{
+    width: 100%;
+}
+
+.footer{
+    margin:20px auto;
+    text-align: center;
+    
+}
+
+.footer div{
+    padding-bottom: 10px;
+}
+.copyright img{
+    width: 7%;
+}
+.copyright p, .footer a{
+    display: inline;
+    color: grey;
+    font-size: smaller;
+    text-decoration: none;
+  
+    
+}
+#navercorp{
+    color: black;
+}
