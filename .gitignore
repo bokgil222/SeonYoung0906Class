@@ -96,3 +96,15 @@ hs_err_pid*
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java
 .classpath
 .project
+sql/20211027.sql_emp_sql.sql
+sql/20211027_emp_sql.sql
+sql/20211027.sql_emp_sql.sql
+sql/20211027.sql
+sql/20211027.sql_emp_sql.sql
+*.sql
+sql/20211027.sql
+html/.vscode/launch.json
+sql/20211027.sql_emp_sql.sql
+sql/20211027.sql
+html/html5/css/blog.css
+sql/20211027.sql
