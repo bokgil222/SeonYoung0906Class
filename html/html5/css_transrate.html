@@ -10,7 +10,7 @@
             width: 500px;
         }
 
-        .movex:hover {
+        /* .movex:hover {
             transform: translateX(250px);
         }
 
@@ -20,44 +20,45 @@
 
         .movexy:hover {
             transform: translate(100px, 100px);
-        }
+        } */
 
     </style>
 
     <style>
-        .scalex:hover {
-            transform: scaleX(1.5);
+        /* .scalex:hover {
+            transform: scaleX(2.5);
         }
         .scaley:hover {
-            transform: scaleY(1.5);
+            transform: scaleY(2.5);
         }
         .scale:hover {
-            transform: scale(1.5);
-        }
+            transform: scale(2.5);
+        } */
     </style>
 
     <style>
-        .rotate60 {
+        /* .rotate60 {
             transform: rotate(60deg);
         }
-
-        
+     
         .rotate120 {
             transform: rotate(120deg);
         }
-
-        
+       
         .rotate180 {
             transform: rotate(180deg);
-        }
-
+        } */
 
     </style>
 
     <style>
+        body {
+            padding-left: 100px;
+        }
+
         .img {
             transform: rotate(45deg);
-            border 1px
+            border 1px solid #000;
         }
 
         .rotate60 .img {
@@ -75,12 +76,11 @@
         .rotate240 .img {
             transform-origin: left bottom;
         }
-
     </style>
 
     <style>
         #tr1 {
-            widht: 100px;
+            width: 100px;
             height: 100px;
 
             background-color: cadetblue;
@@ -88,14 +88,17 @@
             border: 1px solid #000;
 
             transition-property: width, height;
-            transition-delay: 2s, 1s;
+            transition-delay: 1s, 1s;
+
+            transition-duration: 1s, 2s;
+
+            transition-timing-function: linear;
         }
 
         #tr1:hover {
             width: 200px;
             height: 150px;
         }
-
     </style>
 
 </head>
@@ -103,10 +106,12 @@
 <body>
 
 
-    <div id="tr1"></div></div>
+    <div id="tr1"></div>
+
+    <hr>
 
     <div class="border">
-        <div class="rotate240">
+        <div class="rotate60">
             <img src="starwars.png" class="img">
         </div>
     </div>
@@ -122,8 +127,14 @@
             <img src="starwars.png" class="img">
         </div>
     </div>
-    
 
+    <div class="border">
+        <div class="rotate240">
+            <img src="starwars.png" class="img">
+        </div>
+    </div>
+    
+    
 </body>
 
 </html>
