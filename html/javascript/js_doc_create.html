@@ -31,10 +31,10 @@
             var img = document.createElement('img');
 
             // 텍스트 노드 생성
+            var text = document.createTextNode('hello~ DOM!');
             var text1 = document.createTextNode('DIV - 1');
-            var text = document.createTextNode('hello~ DOM!!!');
             
-
+            
             // 텍스트 노드를 태그 엘리먼트로 추가
             header.appendChild(text);
             div.appendChild(text1);
@@ -75,7 +75,7 @@
         var heagers = document.getElementsByTagName('h2');
 
         for(let i=0; i < headers.length; i++){
-            headers[i].innerHTML += 'H2 tag -'+i;
+            headers[i].innerHTML += 'H2 tag - '+i;
         }
 
         // 선택자를 이용해서 엘리먼트 캐스팅
@@ -98,17 +98,19 @@
 
         };
 
-
     </script>
 </head>
+
 <body>
 
-    <h1 id="header1">안녕하세요!</h1>
+    <h1 id="header1"><i>안녕하세요!</i></h1>
     <h2 id="header2">반갑습니다.</h2>
-    <h2 id="header3">제거 대상</h2>
 
+    <div class="wrap">
+        <h2 id="header3">제거 대상</h2>
+    </div>
+    
     <hr>
 
-    
 </body>
 </html>
