@@ -13,13 +13,11 @@ public class HelloServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("Get 요청 처리!");
 
-		resp.getWriter().println("<h3>Get Request</h3>");
+		resp.getWriter().println("<h3>Get Request!</h3>");
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
 	}
-
 	
 }
