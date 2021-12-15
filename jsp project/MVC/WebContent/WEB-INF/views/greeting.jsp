@@ -8,7 +8,9 @@
 </head>
 <body>
 
-	<h1>greeting</h1>
+	<h1>greeting.jsp view가 생성됨!</h1>
+	<hr>
+	
 	<h1>
 		${result}
 	</h1>

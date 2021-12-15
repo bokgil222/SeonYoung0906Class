@@ -8,9 +8,11 @@
 </head>
 <body>
 
-	<h1></h1>
+	<h1>date.jsp view에서 생성됨!!!</h1>
+	<hr>
 	<h1>
 		${reuslt}
 	</h1>
+	
 </body>
 </html>
