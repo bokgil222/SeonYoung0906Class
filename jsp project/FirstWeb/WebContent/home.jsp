@@ -35,6 +35,6 @@
 <body>
 	<%@ include file="include/header.jsp"%>
 	<%@ include file="include/news.jsp"%>
-	<%@ include file="include/shopping.jsp"%>
+	<!-- <%@ include file="include/shopping.jsp"%> -->
 </body>
 </html>
