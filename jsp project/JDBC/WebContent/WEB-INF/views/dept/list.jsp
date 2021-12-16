@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,36 +7,47 @@
 <title>부서관리 프로그램</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/default.css">
 <style>
-	#content {
-		padding: 20px;
-	}
+#content {
+	padding: 20px;
+}
 
-	#content>hr {
-		border: 0px;
-		border-top: 1px solid #aaa;
-		margin: 10px 0;
-	}	
-	
-	#content>table {
-		border: 0px;
-		border-collapse: collapse;
-		
-		width: 700px;
-	}
-	
-	#content>table td, #content>table th {
-		border: 1px solid #aaa;
-		text-align: center;	
-	
-	}
-	
+#content>hr {
+	border: 0px;
+	border-top: 1px solid #aaa;
+	margin: 10px 0;
+}
+
+#content>table {
+	border: 0px;
+	border-collapse: collapse;
+	width: 700px;
+}
+
+#content>table td, #content>table th {
+	border: 1px solid #aaa;
+	text-align: center;
+}
 </style>
+
+<script>
+
+function deleteDept(deptno){
+	
+	if(confrim('삭제하시겠습니까?')){
+		// 삭제 처리할 수 있는 url 이동
+		// http://localhost:8080/jdbc/dept/delete.do?deptno=9998	
+		//alert(deptno + " 삭제");	
+		location.href='delete.do?deptno='+deptno;
+	}
+}
+
+</script>
 </head>
 <body>
 
-	<%@ include file="/WEB-INF/views/frame/header.jsp" %>
-	
-	<%@ include file="/WEB-INF/views/frame/nav.jsp %>
+	<%@ include file="/WEB-INF/views/frame/header.jsp"%>
+
+	<%@ include file="/WEB-INF/views/frame/nav.jsp" %>
 	
 	<div id="content">
 		
@@ -59,7 +69,11 @@
 				<td>${dept.deptno}</td>
 				<td>${dept.dbame}</td>
 				<td>${dept.loc}</td>
-				<td> 수정 | 삭제 </td>
+				<td> 
+					<a href="edit.do?deptno=${dept.deptno}">수정</a> 
+						| 
+					<a href="javascript:deleteDept(${dept.deptno})">삭제</a> 
+				</td>
 			</tr>
 			</c:forEach>
 			
