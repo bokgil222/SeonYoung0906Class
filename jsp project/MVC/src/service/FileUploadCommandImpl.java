@@ -79,7 +79,7 @@ public class FileUploadCommandImpl implements Command {
 						} else {
 							// file 처리
 							
-							// 웹 경로
+							// 파일을 저장할 웹 경로
 							String uploadURI = "/uploadfile";
 							
 							// 시스템 경로
