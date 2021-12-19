@@ -16,7 +16,7 @@ public class MyPageCommandImpl implements Command {
 		if(loginChk) {
 			// 결과 데이터를 생성
 			String msg = "파이페이지에는 사용자 정보를 출력합니다.";
-			// ruquest 속성에 데이터 저장
+			// request 속성에 데이터 저장
 			request.setAttribute("msg", msg);
 		}
 		
