@@ -10,11 +10,14 @@
 
 	<h1>파일 업로드</h1>
 	<hr>
-	title: ${title} <br>
-	userName: ${userName} <br>
-	fileName: ${fileName} <br>
-	contentType: ${contentType} <br>
-	fileSize: ${fileSize}
+	title: ${title} 
+	<br> userName: ${userName} 
+	<br> fileName: ${fileName} 
+	<br> contentType: ${contentType} 
+	<br> fileSize: ${fileSize}
+	<br>
+	
+	<img src="${pagecontext.request.contextPath} /uploadfile/${fileName}" width="100">
 
 </body>
 </html>
