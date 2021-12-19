@@ -1,5 +1,6 @@
 package service;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 import java.util.List;
@@ -78,6 +79,13 @@ public class FileUploadCommandImpl implements Command {
 						} else {
 							// file 처리
 							
+							// 웹 경로
+							String uploadURI = "/uploadfile";
+							
+							// 시스템 경로
+							String saveDir = request.getSession().getServletContext().getRealPath(uploadURI);
+							System.out.println(saveDir);
+							
 							// 파라미터 이름
 							String paramName = item.getFieldName();
 							System.out.println("파라미터 이름 : " + paramName);
@@ -96,6 +104,20 @@ public class FileUploadCommandImpl implements Command {
 								fileSize = item.getSize();
 								System.out.println("파일 사이즈 : " + fileSize);
 								
+								// 파일 저장
+								File saveFile = new File(saveDir, fileName);
+								
+								if(saveFile.exists()) {
+									//                                    {"mini1", ".jpg"}
+									saveFile = new File(saveDir, fileName.split("\\.")[0]+System.nanoTime()+"."+fileName.split("\\.")[1]);
+								}
+								
+								try {
+									item.write(saveFile);
+								} catch (Exception e) {
+									e.printStackTrace();
+
+								}
 							}
 							
 						}
@@ -107,6 +129,8 @@ public class FileUploadCommandImpl implements Command {
 				}
 
 			}
+			
+			// Dao.insert()
 			
 			request.setAttribute("title", title);
 			request.setAttribute("fileName", fileName);
