@@ -22,6 +22,13 @@
 	<h3>${msg}</h3>
 	<h3>${loginInfo.name}(${loginInfo.nic}) 님</h3>
 
+
 </body>
 </html>
 </c:if>
+
+
+
+
+
+
