@@ -23,11 +23,8 @@
 	<div id="content">
 		<h3>회원 가입</h3>
 		<hr>
-		
-		<h3>
-			
+		<h3>	
 		${result eq 1 ? '회원 가입 완료!' : result eq 0 ? '회원 가입 실패! : '서버 오류'}
-			
 		</h3>
 		
 	</div>
