@@ -1,5 +1,12 @@
 package member.domain;
 
+import java.sql.Timestamp;
+
+/*
+	작업자: 서선영
+	날짜: 2021.12.21
+	작업내용: 사진 파일의 경로를 저장하는 변수 추가
+ */
 public class Member {
 	
 	private int idx;
@@ -8,13 +15,17 @@ public class Member {
 	private String username;
 	//private timestamp regdate; // java.sql.TimeStamp -> java.util.Date
 	private String regdate; // DB -> 2021.12.20 12:21
+	// 2021.12.21: photo 컬럼 추가
+	private String photo;
 	
-	public Member(int idx, String userid, String pw, String username, String regdate) {
+	
+	public Member(int idx, String userid, String pw, String username, String regdate, String photo) {
 		this.idx = idx;
 		this.userid = userid;
 		this.pw = pw;
 		this.username = username;
 		this.regdate = regdate;
+		this.photo = photo;
 	}
 	
 	public Member() {
@@ -49,5 +60,23 @@ public class Member {
 	}
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	@Override
+	public String toString() {
+		return "Member [idx=" + idx + ", userid=" + userid + ", pw=" + pw + ", username=" + username + ", regdate="
+				+ regdate + ", photo=" + photo + "]";
+	}
+	
+	public LoginInfo getLoginInfo() {
+		return new LoginInfo(this.userid, this.username, this.photo);
 	}
 }

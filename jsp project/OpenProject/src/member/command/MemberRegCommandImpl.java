@@ -19,7 +19,6 @@ public class MemberRegCommandImpl implements Command {
 			
 		} else if(request.getMethod().equals("POST")) {
 			
-			
 			//int cnt = MemberRegService.getInstance().insertMember(request, response);
 		
 			// request 속성 처리
@@ -27,7 +26,6 @@ public class MemberRegCommandImpl implements Command {
 			request.setAttribute("result", MemberRegService.getInstance().insertMember(request, response));
 			
 			view = "/WEB-INF/views/member/reg.jsp";
-			
 		}
 		
 		// request 속성 처리
