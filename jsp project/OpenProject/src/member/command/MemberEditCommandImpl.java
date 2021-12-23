@@ -3,6 +3,7 @@ package member.command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import command.Command;
 import member.service.MemberEditService;
 
 public class MemberEditCommandImpl implements Command {
@@ -12,7 +13,7 @@ public class MemberEditCommandImpl implements Command {
 
 		String view = null;
 		
-		if(request.getMethod().contentEquals("GET")) {
+		if(request.getMethod().equals("GET")) {
 		
 			String index = request.getParameter("idx");
 			
