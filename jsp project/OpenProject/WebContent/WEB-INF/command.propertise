@@ -21,3 +21,7 @@
 
 # GuestBook insert
 /guestbook/write.do=guestbook.command.GuestBookWriteCommandImpl
+# GuestBook list
+/guestbook/list.do=guestbook.command.GuestBookListCommandImpl
+# GuestBook view
+/guestbook/view.do=guestbook.command.GuestBookViewCommandImpl
