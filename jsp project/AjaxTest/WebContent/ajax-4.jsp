@@ -7,24 +7,20 @@
 <title>ajax-1</title>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
-	
-	// 서버의 리소스를 요청해서 현재 페이지의 엘리먼트에  추가
+
+	// 서버의 리소스를 요청해서 현재 페이지의 엘리먼트에 추가
 	$(document).ready(function(){
 		
-		$('#btn').click(function(){
-
-			$.ajax({
-				url : 'parameter.jsp', // 통신 경로
-				type : 'get', // http method : get, post, put, delete
-				data : {
-					pname : $('#pname').val(),
-					price : $('#price').val() 
-				},
-				success : function(data){
-					$('#list').append(data);
-				}
+		$.getJSON('data.json', function(data){
+			// data 는 JSON 문자열이 아니라 자바스크립트의 객체로 변환된 데이터
+			//$.each(data,function(){});
+			//$('h1').each(function(){});
+			
+			$.each(data, function(index, value){
+				var html = '제품명: ' + value.name + ', 가격: ' + value.price + '원 <br>';
+				$('#list').append(html);
 			});
-		});		
+		});
 	});
 
 </script>
@@ -42,6 +38,6 @@
 	<h3 id="list">
 	
 	</h3>
-	
+
 </body>
 </html>
