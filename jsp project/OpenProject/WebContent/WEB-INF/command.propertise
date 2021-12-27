@@ -25,3 +25,10 @@
 /guestbook/list.do=guestbook.command.GuestBookListCommandImpl
 # GuestBook view
 /guestbook/view.do=guestbook.command.GuestBookViewCommandImpl
+# GuestBook edit
+/guestbook/edit.do=guestbook.command.GuestBookEditCommandImpl
+# GuestBook delete
+/guestbook/delete.do=guestbook.command.GuestBookDeleteCommandImpl
+
+
+/guestbook/writeajax.do=guestbook.command.GuestBookWriteAjaxCommandImpl

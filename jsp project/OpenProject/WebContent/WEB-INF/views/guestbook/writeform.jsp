@@ -49,7 +49,10 @@
 				<tr>
 					<td></td>
 					<td>
-						<input type="submit" value="작성"> <input type="reset">
+						<input type="submit" value="작성"> 
+						<input type="reset">
+						
+						<input type="button" value="ajax로 게시물 입력">
 					</td>
 				</tr>
 				
