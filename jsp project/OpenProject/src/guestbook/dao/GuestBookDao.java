@@ -1,4 +1,4 @@
-package guestbook.dao;
+ package guestbook.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

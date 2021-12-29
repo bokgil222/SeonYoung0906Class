@@ -149,7 +149,7 @@ img.pimg {
 			<a href="">목록</a> 
 			<c:if test="${loginInfo.idx eq pageView.memberidx}">
 			<a href="">수정</a> 
-			<a href="">삭제</a>
+			<a href="">삭제</a> 
 			</c:if>
 		</div>
 
