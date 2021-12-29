@@ -8,12 +8,10 @@ public class EditRequest {
 	private String subject;
 	private String content;
 	
-	public EditRequest() {
-		
+	public EditRequest() {		
 	}
 	
 	public EditRequest(int guestbookIdx, int memberIdx, String subject, String content) {
-		super();
 		this.guestbookIdx = guestbookIdx;
 		this.memberIdx = memberIdx;
 		this.subject = subject;
@@ -50,5 +48,11 @@ public class EditRequest {
 
 	public void setContent(String content) {
 		this.content = content;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "EditRequest [guestbookIdx=" + guestbookIdx + ", memberIdx=" + memberIdx + ", subject=" + subject
+				+ ", content=" + content + "]";
+	}		
 }

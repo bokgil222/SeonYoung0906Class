@@ -7,19 +7,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import guestbook.dao.GuestBookDao;
+import guestbook.domain.EditRequest;
 import guestbook.domain.Message;
 import jdbc.ConnectionProvider;
 
 public class GuestBookEditService {
 
-	// 싱글톤
-	private GuestBookEditService() {}
+	private GuestBookEditService() {
+	}
+
 	private static GuestBookEditService service = new GuestBookEditService();
+
 	public static GuestBookEditService getInstance() {
 		return service;
 	}
-	
-	public Message getMessage(int idx) {
+		
+	public Message getMessage(int idx, int memberIdx) {
 		
 		Message message = null;
 		
@@ -28,25 +31,38 @@ public class GuestBookEditService {
 		try {
 			conn = ConnectionProvider.getConnection();
 			
-			message = GuestBookDao.getInstance().selectMessageByIdx()
-					
+			message = GuestBookDao.getInstance().selectMessageByIdx(conn, idx, memberIdx);
+						
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
+				
 		return message;
 	}
-	
+		
 	public int editMessage(HttpServletRequest request, HttpServletResponse response) {
 		
 		int resultCnt = 0;
 		
 		// 사용자가 입력한 데이터들을 받고
 		EditRequest editRequest = new EditRequest(
-				Integer parseInt(request.getParameter("guestbookIdx")),
-				Integer.parseInt(request.getParameter("memberIdx")),
-				request.getParameter
-				
+				Integer.parseInt(request.getParameter("guestbookIdx")) , 
+				Integer.parseInt(request.getParameter("memberIdx")), 
+				request.getParameter("subject"), 
+				request.getParameter("content")
+				);
+		
+		Connection conn = null;
+		
+		try {
+			conn = ConnectionProvider.getConnection();
+			
+			resultCnt = GuestBookDao.getInstance().updateMessage(conn, editRequest);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return resultCnt;
 	}
 }
