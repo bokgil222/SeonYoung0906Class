@@ -4,14 +4,19 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import mm.domain.Member;
 
+@Component("dao")   // memberDao
+@Qualifier("md")
 public class MemberDao implements Dao {
 	
 	// ID 
 	private static int nextId = 0;
 	
-	// È¸¿ø Á¤º¸¸¦ ÀúÀå 
+	// íšŒì› ì •ë³´ë¥¼ ì €ì¥ 
 	private Map<String, Member> map = new HashMap<String, Member>();
 
 	@Override
