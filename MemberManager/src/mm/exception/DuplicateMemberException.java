@@ -1,3 +1,4 @@
+// 7
 package mm.exception;
 
 public class DuplicateMemberException extends Exception {
