@@ -6,15 +6,15 @@ import mm.service.MemberRegService;
 
 public class Assembler {
 
-	// Á¶¸³±â
-	// °´Ã¼¸¦ °ü¸®: °´Ã¼ »ı¼º(ÀÇÁ¸ ¼³Á¤), º¸°ü, Á¦°ø
-	
-	// º¸°ü
+	// ì¡°ë¦½ê¸°
+	// ê°ì²´ë¥¼ ê´€ë¦¬ : ê°ì²´ ìƒì„±( ì˜ì¡´ ì„¤ì • ), ë³´ê´€, ì œê³µ
+
+	// ë³´ê´€
 	private MemberDao dao;
 	private MemberRegService regService;
 	private ChangePasswordService passwordService;
-	
-	// °´Ã¼ »ı¼º
+
+	// ê°ì²´ ìƒì„±
 	public Assembler() {
 		dao = new MemberDao();
 		regService = new MemberRegService();
@@ -22,16 +22,16 @@ public class Assembler {
 		regService.setDao(new MemberDao());
 		passwordService = new ChangePasswordService(dao);
 	}
-	
-	// °´Ã¼ Á¦°ø
+
+	// ê°ì²´ ì œê³µ
 	public MemberDao getDao() {
 		return dao;
 	}
-	
+
 	public MemberRegService getRegService() {
 		return regService;
 	}
-	
+
 	public ChangePasswordService getPasswordService() {
 		return passwordService;
 	}
