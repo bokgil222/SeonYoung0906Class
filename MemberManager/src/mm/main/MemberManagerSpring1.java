@@ -32,7 +32,7 @@ public class MemberManagerSpring1 {
 			 
 			 // exit
 			 if(command.equals("exit")) {
-				 System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				 System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 				 return;
 			 }
 			 
@@ -43,7 +43,7 @@ public class MemberManagerSpring1 {
 			 
 			 if(command.startsWith("change")) {
 				 processChangePassword(command.split(" "));
-			 }
+			 }			
 		}		
 	}
 	
@@ -66,7 +66,7 @@ public class MemberManagerSpring1 {
 		} catch (IdPasswordNotMatchingException e) {
 			System.out.println(e.getMessage());
 			//e.printStackTrace();
-		}
+		}		
 	}
 
 	private static void processNewMember(String[] values) {
@@ -76,14 +76,14 @@ public class MemberManagerSpring1 {
 		
 		// new 0 
 		// son@gmail.com 1 
-		// ¼ÕÈï¹Î 2
+		// ì†í¥ë¯¼ 2
 		// 123 3
 		// 123 4
 		RegRequest request = new RegRequest(values[1], values[3], values[4], values[2]);
 		
-		// ºñ¹Ğ¹øÈ£¿Í ºñ¹Ğ¹øÈ£ È®ÀÎ ºñ±³
+		// ë¹„ë°€ë²ˆí˜¸ì™€ ë¹„ë°€ë²ˆí˜¸ í™•ì¸ ë¹„êµ
 		if(!request.isPwRePwEquals()){
-			System.out.println("ºñ¹Ğ¹øÈ£¿Í ºñ¹Ğ¹øÈ£È®ÀÎÀÌ ¼­·Î ÀÏÄ¡ ÇÏÁö ¾Ê½À´Ï´Ù.");
+			System.out.println("ë¹„ë°€ë²ˆí˜¸ì™€ ë¹„ë°€ë²ˆí˜¸í™•ì¸ì´ ì„œë¡œ ì¼ì¹˜ í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			return;
 		}
 		
@@ -99,13 +99,13 @@ public class MemberManagerSpring1 {
 
 	static void printMenu() {
 		System.out.println();
-		System.out.println("¸í·É¾î »ç¿ë¹ı");
+		System.out.println("ëª…ë ¹ì–´ ì‚¬ìš©ë²•");
 		System.out.println("-----------------------------------");
-		System.out.println("½Å±Ô ÀÔ·Â");
-		System.out.println("new ÀÌ¸ŞÀÏ ÀÌ¸§ ºñ¹Ğ¹øÈ£ ºñ¹Ğ¹øÈ£È®ÀÎ"); // new son@gmail.com ¼ÕÈï¹Î 123 123
-		System.out.println("new son@gmail.com ¼ÕÈï¹Î 123 123");
-		System.out.println("ºñ¹Ğ¹øÈ£ ¼öÁ¤");
-		System.out.println("change ÀÌ¸ŞÀÏ ÇöÀçºñ¹ø »õ·Î¿îºñ¹ø"); // change son@gmail.com 123 000
+		System.out.println("ì‹ ê·œ ì…ë ¥");
+		System.out.println("new ì´ë©”ì¼ ì´ë¦„ ë¹„ë°€ë²ˆí˜¸ ë¹„ë°€ë²ˆí˜¸í™•ì¸"); // new son@gmail.com ì†í¥ë¯¼ 123 123
+		System.out.println("new son@gmail.com ì†í¥ë¯¼ 123 123");
+		System.out.println("ë¹„ë°€ë²ˆí˜¸ ìˆ˜ì •");
+		System.out.println("change ì´ë©”ì¼ í˜„ì¬ë¹„ë²ˆ ìƒˆë¡œìš´ë¹„ë²ˆ"); // change son@gmail.com 123 000
 		System.out.println("change son@gmail.com 123 000");
 		System.out.println("-----------------------------------");
 	}
