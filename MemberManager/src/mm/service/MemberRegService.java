@@ -1,37 +1,38 @@
 package mm.service;
 
 import mm.dao.Dao;
+import mm.dao.MemberDao;
 import mm.domain.Member;
 import mm.domain.RegRequest;
 import mm.exception.DuplicateMemberException;
 
 public class MemberRegService {
 
-	//MemberDao dao = new MemberDao();  // ÀÇÁ¸ »óÅÂ
+	//MemberDao dao = new MemberDao(); // ì˜ì¡´ ìƒíƒœ
 	
-	private Dao dao;  
-	// DaoÅ¸ÀÔÀÇ °´Ã¼¸¦ ÁÖÀÔ¹Ş´Â ¹æ¹ı: »ı¼ºÀÚ, setter ¸Ş¼Òµå
+	private Dao dao;	
+	// Dao íƒ€ì…ì˜ ê°ì²´ë¥¼ ì£¼ì…ë°›ëŠ” ë°©ë²• : ìƒì„±ì, setter ë©”ì†Œë“œ
 	
-	public MemberRegService() {}
+	//public MemberRegService() {}
 	
 	public MemberRegService(Dao dao) {
 		this.dao = dao;
 	}
 	
-	public void setDao(Dao dao) {
-		this.dao = dao;
-	}
+//	public void setDao(Dao dao) {
+//		this.dao = dao;
+//	}
 	
 	public void regMember(RegRequest request) throws DuplicateMemberException {
 		
-		// ÀÌ¸ŞÀÏ Áßº¹ Ã¼Å©
+		// ì´ë©”ì¼ ì¤‘ë³µ ì²´í¬
 		Member member = dao.selectByEmail(request.getEmail());
 		
 		if(member != null) {
-			throw new DuplicateMemberException("ÀÌ¹Ì Á¸ÀçÇÏ´Â ÀÌ¸ŞÀÏ!");
+			throw new DuplicateMemberException("ì´ë¯¸ ì¡´ì¬í•˜ëŠ” ì´ë©”ì¼!");
 		}
 		
 		dao.insert(request.toMember());
-		System.out.println("[msg: µî·ÏµÇ¾ú½À´Ï´Ù.]");
+		System.out.println("[msg : ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.]");
 	}
 }
