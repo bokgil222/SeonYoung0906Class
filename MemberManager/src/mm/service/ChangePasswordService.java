@@ -1,4 +1,3 @@
-// 8
 package mm.service;
 
 import mm.dao.Dao;
@@ -8,39 +7,31 @@ import mm.exception.NotFoundMemberException;
 
 public class ChangePasswordService {
 
-	// ÀÎ½ºÅÏ½º º¯¼ö »ı¼º
 	private Dao dao;
 
-	// ±âº» »ı¼ºÀÚ
-	public ChangePasswordService() {
-	}
-
+	public ChangePasswordService() {}
+	
 	public ChangePasswordService(Dao dao) {
 		this.dao = dao;
 	}
-
-	// setter
+	
 	public void setDao(Dao dao) {
 		this.dao = dao;
 	}
-
-	// changePassword ¸Ş¼Òµå »ı¼º
+	
 	public void changePassword(String email, String oldPw, String newPw) throws NotFoundMemberException, IdPasswordNotMatchingException {
-
-		// È¸¿øÀÌ Á¸ÀçÇÏ´ÂÁö ¿©ºÎ È®ÀÎ
+		
+		// íšŒì›ì´ ì¡´ì¬ í•˜ëŠ”ì§€ ì—¬ë¶€ -> ì˜ˆì™¸ ë°œìƒ!
 		Member member = dao.selectByEmail(email);
 		
-		// ¿¹¿Ü ¹ß»ı: È¸¿øÀÌ Á¸ÀçÇÏÁö ¾ÊÀ½
-		if (member == null) {
-			throw new NotFoundMemberException("µî·ÏµÈ È¸¿øÁ¤º¸°¡ ¾ø½À´Ï´Ù.");
+		if(member == null) {
+			throw new NotFoundMemberException("ë“±ë¡ëœ íšŒì›ì •ë³´ ì—†ìŠµë‹ˆë‹¤.");
 		}
-
-		// È¸¿øÀÌ Á¸ÀçÇÒ °æ¿ì
+		
 		member.changePassword(oldPw, newPw);
-
-		// password  º¯°æ
+		
 		dao.update(member);
-
-		System.out.println("ºñ¹Ğ¹øÈ£°¡ º¯°æµÇ¾ú½À´Ï´Ù.");
+		
+		System.out.println("ë¹„ë°€ë²ˆí˜¸ê°€ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 }
