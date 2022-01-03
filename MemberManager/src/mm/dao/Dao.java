@@ -5,16 +5,16 @@ import java.util.Collection;
 import mm.domain.Member;
 
 public interface Dao {
-	
-	// È¸¿ø Á¤º¸ ÀúÀå
+
+	// íšŒì› ì •ë³´ ì €ì¥
 	void insert(Member member);
 	
-	// È¸¿ø µ¥ÀÌÅÍ ¼öÁ¤
+	// íšŒì› ë°ì´í„° ìˆ˜ì •
 	void update(Member member);
 	
-	// È¸¿ø µ¥ÀÌÅÍ email °Ë»ö -> Member °´Ã¼·Î º¯È¯
+	// íšŒì› ë°ì´í„° email ê²€ìƒ‰ -> Member ê°ì²´ë¡œ ë°˜í™˜
 	Member selectByEmail(String email);
 	
-	// ÀüÃ¼ µ¥ÀÌÅÍ ¹İÈ¯
+	// ì „ì²´ ë°ì´í„° ë°˜í™˜
 	Collection<Member> selectAll();
 }
