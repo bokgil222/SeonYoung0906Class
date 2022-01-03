@@ -1,18 +1,18 @@
 package mm.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 import mm.exception.IdPasswordNotMatchingException;
 
 public class Member {
 
-	// ¾ÆÀÌµğ, ÀÌ¸ŞÀÏ, ºñ¹Ğ¹øÈ£, ÀÌ¸§, °¡ÀÔÀÏ½Ã
-	private Long id;
+	// ì•„ì´ë””, ì´ë©”ì¼, ë¹„ë°€ë²ˆí˜¸, ì´ë¦„, ê°€ì…ì¼ì‹œ
+	private long id;
 	private String email;
 	private String password;
 	private String name;
 	private Date regDate;
-	
+
 	public Member(long id, String email, String password, String name, Date regDate) {
 		this.id = id;
 		this.email = email;
@@ -21,11 +21,11 @@ public class Member {
 		this.regDate = regDate;
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -61,13 +61,13 @@ public class Member {
 		this.regDate = regDate;
 	}
 	
-	// ºñ¹Ğ¹øÈ£ º¯°æ ¸Ş¼Òµå
-	public void changePassword(String oldPw, String newPw) throws IdPasswordNotMatchingException{
+	// ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ ë©”ì†Œë“œ
+	public void changePassword(String oldPw, String newPw) throws IdPasswordNotMatchingException {
 		
 		if(!this.password.equals(oldPw)) {
-			throw new IdPasswordNotMatchingException("ºñ¹Ğ¹øÈ£ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+			throw new IdPasswordNotMatchingException("ë¹„ë¹Œë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		}
 		
 		this.password = newPw;
-	}	
+	}
 }
