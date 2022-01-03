@@ -1,10 +1,11 @@
+// 5
 package mm.domain;
 
 import java.util.Date;
 
 public class RegRequest {
 
-	// �̸���, ��й�ȣ, ��й�ȣ Ȯ��, �̸�
+	// 이메일, 비밀번호, 비밀번호 확인, 이름
 	private String email;
 	private String password;
 	private String confirmPassword;
@@ -52,12 +53,12 @@ public class RegRequest {
 		this.name = name;
 	}
 	
-	// ��й�ȣ ��й�ȣ ��ġ����
+	// 비밀번호 비밀번호 일치 여부(password 인스턴스 변수와 confirmPassword 변수 일치하는지 비교)
 	public boolean isPwRePwEquals() {
 		return password.equals(confirmPassword);
 	}
 	
-	// RegRequest -> Member
+	// RegRequest -> Member 객체로 변환
 	public Member toMember() {
 		return new Member(0, email, password, name, new Date());
 	}
