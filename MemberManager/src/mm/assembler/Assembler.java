@@ -17,7 +17,7 @@ public class Assembler {
 	// 객체 생성
 	public Assembler() {
 		dao = new MemberDao();
-		regService = new MemberRegService();
+		regService = new MemberRegService(dao);
 		//regService.setDao(dao);
 		regService.setDao(new MemberDao());
 		passwordService = new ChangePasswordService(dao);
