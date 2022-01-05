@@ -15,7 +15,6 @@ import com.bitcamp.mvc.domain.RegRequest;
 @RequestMapping("/member/reg")
 public class MemberRegController {
 
-	
 	//@RequestMapping(method = RequestMethod.GET)
 	@GetMapping
 	public String getRegForm() {
@@ -25,7 +24,6 @@ public class MemberRegController {
 	//@RequestMapping(method = RequestMethod.POST)
 	@PostMapping
 	public String memberReg(
-			
 			HttpServletRequest request,
 			@RequestParam("uid") String uid, 
 			@RequestParam("pw") String pw,
@@ -48,5 +46,4 @@ public class MemberRegController {
 	}
 	
 	//	public void getForm() {/WEB-INF/views/member/reg.jsp}
-
 }
