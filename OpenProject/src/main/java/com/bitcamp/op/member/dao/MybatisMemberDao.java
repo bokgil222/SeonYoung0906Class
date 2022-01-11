@@ -6,10 +6,10 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bitcamp.op.member.domain.LoginParams;
 import com.bitcamp.op.member.domain.Member;
 import com.bitcamp.op.member.domain.MemberRegRequest;
-import com.bitcamp.op.member.service.LoginParams;
-import com.bitcamp.op.member.service.SearchParams;
+import com.bitcamp.op.member.domain.SearchParams;
 
 @Repository
 public class MybatisMemberDao {
