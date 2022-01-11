@@ -43,4 +43,8 @@ public class MemberLoginRequest {
 	public String toString() {
 		return "MemberLoginRequest [url=" + url + ", userid=" + userid + ", pw=" + pw + ", saveid=" + saveid + "]";
 	}
+	
+	public LoginParams getLoginParams() {
+		return new LoginParams(userid, pw);
+	}
 }
