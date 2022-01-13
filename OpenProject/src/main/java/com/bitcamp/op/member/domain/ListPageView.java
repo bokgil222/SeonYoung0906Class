@@ -20,9 +20,9 @@ public class ListPageView {
 
 	private void calTotalCount() {
 		pageTotalCount = totalCount / countPerPage;
-		pageTotalCount = totalCount % countPerPage > 0 ? pageTotalCount++ : pageTotalCount;
+		pageTotalCount = totalCount % countPerPage > 0 ? ++pageTotalCount : pageTotalCount;
 	}
-
+	
 	public int getTotalCount() {
 		return totalCount;
 	}
