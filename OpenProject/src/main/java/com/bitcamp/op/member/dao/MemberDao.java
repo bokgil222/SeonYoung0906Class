@@ -1,6 +1,7 @@
 package com.bitcamp.op.member.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.bitcamp.op.member.domain.EditRequest;
 import com.bitcamp.op.member.domain.Member;
@@ -25,8 +26,14 @@ public interface MemberDao {
 	public Member selectByIdx(int idx);
 	
 	public Member2 selectByIdx2(int idx);
-	
+
 	public int deleteByIdx(int memberIdx);
 
 	public int editMember(EditRequest editRequest);
 }
+
+
+
+
+
+
