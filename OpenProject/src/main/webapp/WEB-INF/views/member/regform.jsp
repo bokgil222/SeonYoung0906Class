@@ -9,6 +9,7 @@
 <%@ include file="/WEB-INF/views/frame/pageset.jsp"%>
 
 <style>
+
 #msg {
 	display: none;
 }
@@ -33,24 +34,27 @@
 
 		$('#userid').focusout(function() {
 
-			$.ajax({
-				url : 'http://localhost:8081/op/member/checkid.do',
+			$.ajax({             // http://localhost:8080/op/member/reg
+				url : 'checkid', // http://localhost:8080/op/member/checkid
 				type : 'get',
 				data : {
 					userid : $('#userid').val()
 				},
 				success : function(data) {
+					
+					console.log('통신 결과 : ', data);
+					
 					// Y | N
 					if (data == 'Y') {
 						// 사용 가능한 아이디
 						$('#msg').css('display', 'block');
-						$('#msg').text('멋진 아이디입니다!');
+						$('#msg').text('멋진 아이디 입니다!');
 						$('#msg').addClass('text_blue');
 
 					} else {
 						// 사용 불가능한 아이디
 						$('#msg').css('display', 'block');
-						$('#msg').text('사용중이거나 탈퇴한 아이디입니다!');
+						$('#msg').text('사용중이거나 탈퇴한 아이디 입니다!');
 						$('#msg').addClass('text_red');
 					}
 				},
@@ -58,6 +62,7 @@
 					console.log('비동기 통신 오류');
 				}
 			});
+
 		});
 
 		$('#ajaxBtn').click(function() {
@@ -96,20 +101,24 @@
 					console.log(req);
 				}
 			});
+
 		});
+
 	});
 </script>
+
 
 </head>
 <body>
 
-	<!-- 헤더 시작 -->
+	<!-- 해더 시작 -->
 	<%@ include file="/WEB-INF/views/frame/header.jsp"%>
-	<!-- 헤더 끝 -->
+	<!-- 해더 끝 -->
 
 	<!-- 네비게이션 시작 -->
 	<%@ include file="/WEB-INF/views/frame/nav.jsp"%>
 	<!-- 네비게이션 끝 -->
+
 
 
 	<main role="main" class="container">
@@ -125,38 +134,39 @@
 					<label for="userid" class="col-sm-2 col-form-label">아이디</label>
 					<div class="col-sm-10">
 						<input type="email" name="userid" id="userid" class="form-control" required>
+						<div id="msg"></div>
 					</div>
 				</div>
-
+				
 				<div class="form-group row">
 					<label for="pw" class="col-sm-2 col-form-label">비밀번호</label>
 					<div class="col-sm-10">
-						<input type="password" name="pw" id="pw" class="form-control" required>
+						<input type="password" name="pw" id="pw"  class="form-control" required>
 					</div>
 				</div>
-
+				
 				<div class="form-group row">
 					<label for="repw" class="col-sm-2 col-form-label">비밀번호</label>
 					<div class="col-sm-10">
-						<input type="password" name="repw" id="repw" class="form-control" required>
+						<input type="password" name="repw" id="repw"  class="form-control" required>
 					</div>
 				</div>
-
+				
 				<div class="form-group row">
 					<label for="username" class="col-sm-2 col-form-label">이름</label>
 					<div class="col-sm-10">
-						<input type="text" name="username" id="username" class="form-control" required>
+						<input type="text" name="username" id="username"  class="form-control" required>
 					</div>
 				</div>
-
+				
 				<div class="form-group row">
 					<label for="photo" class="col-sm-2 col-form-label">사진</label>
 					<div class="col-sm-10">
 						<input type="file" name="photo" id="photo" class="form-control-plaintext">
 					</div>
 				</div>
-
-				<input type="submit" value="회원가입" class="btn  btn-primary">
+				
+				<input type="submit" value="회원가입" class="btn  btn-primary"> 
 				<input type="reset" class="btn btn-secondary"> 
 				<input type="button" value="ajax로 회원가입" id="ajaxBtn" class="btn btn-success">
 
@@ -164,8 +174,6 @@
 		</div>
 
 	</main>
-
-
 
 	<!-- content 시작 -->
 	<div id="content"></div>
