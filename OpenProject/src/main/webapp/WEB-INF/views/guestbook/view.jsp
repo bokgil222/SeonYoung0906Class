@@ -146,7 +146,7 @@ div.reply>div.close>div {
 			</table>
 		</div>
 
-		<div class="col-md-8 my-3 p-3 bg-white rounded shadow-sm">
+		<div id="replyList" class="col-md-8 my-3 p-3 bg-white rounded shadow-sm">
 			<h3 class="border-bottom border-gray pb-2 mb-0">댓글</h3>
 			<c:if test="${not empty replyList}">
 				<c:forEach items="${replyList}" var="reply">
@@ -176,9 +176,11 @@ div.reply>div.close>div {
 				<!-- http://localhost:8080/op/guestbook/reply.do -->
 
 				<textarea name="message" id="message" rows="5" cols="30"
-					class="form-control p-3"></textarea>
+					class="form-control p-3" required></textarea>
+					
 				<input type="hidden" name="memberIdx" value="${loginInfo.idx}">
 				<input type="hidden" name="guestbookIdx" value="${pageView.idx}">
+				
 				<br> <input type="submit" value="작성" class="btn btn-primary">
 			</form>
 
@@ -212,59 +214,30 @@ div.reply>div.close>div {
 
 			$('#replyWriteForm').submit(function() {
 				
-				
+				console.log($(this).serializeArray());
 
-				$.ajax({
-					url : 'reply/write3.do',
+				$.ajax({                 // http://localhost:8080/op/guestbook/view
+					url : 'reply/write', // http://localhost:8080/op/guestbook/reply/write
 					type : 'POST',
 					data : $(this).serialize(),
 					success : function(data) {
-						console.log(data);
+						console.log(data); // idx 값
 						
-						$('#replyList').html('');
+						var html = '';
+						html += '<div id="reply'+data+'" class="media text-muted pt-3">';
+						html += '<img src="/op/uploadfile/${loginInfo.photo}" style="height: 30px;" class="border rounded-circle mr-3">';
+						html += '<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">';
+						html += '<strong class="d-block text-gray-dark">@${loginInfo.userName}</strong>';
+						html += $('#message').val();
+						html += '</p>';
+						html += '<div onclick="deleteReply('+data+')" class="badge  badge-info">X</div>';
+						html += '</div>';
 						
-						// 현재 data -> 자바스크립트의 객체
-						$.each(data, function(index, item){
+						$('#replyList').append(html);
+						$('#message').val('');
 							
-							var html = '';
-							html += '<div id="reply'+item.idx+'" class="reply">';
-							html += '<div class="img">';
-							html += '	<img src="/op/uploadfile/'+item.photo+'">';
-							html += '</div>';
-							html += '<div class="content">';
-							html += '	<h4>'+item.userName+'</h4>';
-							html += '	<div>';
-							html += '		<pre>'+item.content+'</pre>';
-							html += '	</div>';
-							html += '	<div>'+item.regdate+'</div>';
-							html += '</div>';
-							html += '<div class="close">';
-							html += '	<div onclick="deleteReply('+item.idx+')">X</div>';
-							html += '</div>';
-							html += '</div>';
 							
-							$('#replyList').append(html);
-							
-							$('#message').val('');
-							
-						});
 						
-						
-						
-						
-						// 응답이 html 일때 처리
-						//$('#replyList').html(data);
-
-						// 입력처리 여부만 판단 -> view.do
-/* 						if (data == '1') {
-							alert('등록 성공');
-							//location.href = 'view.do?idx=${pageView.idx}';
-							// 1. 화면에 출력할 html 응답
-							// 2. 화면에 출력할 데이터 JSON 받고 파싱
-						} else {
-							alert('등록 실패');
-						}
- */
 					},
 					error : function() {
 						console.log('통신에러 !!!!!');
@@ -286,7 +259,7 @@ div.reply>div.close>div {
 				
 				
 				$.ajax({
-					url : 'reply/delete.do',
+					url : 'reply/delete', // http://localhost:8080/op/guestbook/reply/delete
 					type : 'post',
 					data : {idx : idx},
 					success : function(data){
