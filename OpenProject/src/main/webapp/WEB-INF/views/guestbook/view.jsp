@@ -216,8 +216,9 @@ div.reply>div.close>div {
 				
 				console.log($(this).serializeArray());
 
+				
 				$.ajax({                 // http://localhost:8080/op/guestbook/view
-					url : 'reply/write', // http://localhost:8080/op/guestbook/reply/write
+					url : '${pageContext.request.contextPath}/api/v1/guestbook/reply', // http://localhost:8080/op/guestbook/reply/write
 					type : 'POST',
 					data : $(this).serialize(),
 					success : function(data) {
@@ -259,9 +260,11 @@ div.reply>div.close>div {
 				
 				
 				$.ajax({
-					url : 'reply/delete', // http://localhost:8080/op/guestbook/reply/delete
-					type : 'post',
-					data : {idx : idx},
+					//url : 'reply/delete', // http://localhost:8080/op/guestbook/reply/delete
+					//                                    /op/api/v1/guestbook/reply/69
+					url : '${pageContext.request.contextPath}/api/v1/guestbook/reply/'+idx,
+					type : 'DELETE',
+					//data : {idx : idx},
 					success : function(data){
 						if(data == '1'){
 							// #reply4
